@@ -9,6 +9,9 @@ import { signOutUserStart } from '../../../redux/user/user.actions'
 // SELECTORS 
 import { selectCartItemsCount } from './../../../redux/cart/cart.selectors'
 
+// NOTIFICATIONS
+import { googleSignOutNotification } from './../../../redux/user/user.notifs'
+
 const SubMenu = Menu.SubMenu
 const MenuItemGroup = Menu.ItemGroup
 
@@ -23,6 +26,8 @@ export default function RightMenu(){
 
     const signOut = () => {
         dispatch(signOutUserStart())
+        googleSignOutNotification()
+
     }
 
     return (

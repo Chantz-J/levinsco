@@ -18,6 +18,13 @@ import { signInSuccess,
 // HELPERS
 import { handleResetPasswordAPI } from './user.helpers'
 
+// NOTIFICATIONS
+import { googleSignInNotification, emailSignInNotification } from './user.notifs'
+
+
+
+
+
 // ...SIGN IN SAGAS (EMAIL AND PASSWORD)...
         export function* getSnapshotFromUserAuth(user, additionalData = {} ){
             try {
@@ -39,6 +46,7 @@ import { handleResetPasswordAPI } from './user.helpers'
     try {
         const { user } = yield auth.signInWithEmailAndPassword(email, password)
         yield getSnapshotFromUserAuth(user)
+        yield emailSignInNotification(user)
         
      } catch (error) {
          const ERROR = error.message
@@ -130,7 +138,7 @@ export function* onSignOutUserStart(){
 }
 
 
-// --- RESET PASSWORD SAGAS --- 
+// --- RESET PASSWORD SAGAS ---
     export function* resetPassword({ payload: { email } }){
        
             try {
@@ -150,11 +158,19 @@ export function* onResetPasswordStart(){
     yield takeLatest(userTypes.RESET_PASSWORD_START, resetPassword)
 }
 
+
+
+
+
+
+
 // --- GOOGLE SIGN IN SAGAS ----
     export function* googleSignIn(){
         try {
             const { user } = yield auth.signInWithPopup(GoogleProvider)
             yield getSnapshotFromUserAuth(user)
+            yield googleSignInNotification(user)
+
         } catch (error) {
             console.error(error.message)
         }
