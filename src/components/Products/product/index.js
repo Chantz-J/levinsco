@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Card, Col, Row, Button, Divider, notification } from 'antd'
 import styled from 'styled-components'
-import  Button from '../../forms/Button'
+// import  Button from '../../forms/Button'
 import { useDispatch } from 'react-redux'
 
 import { addPlantToCart } from '../../../redux/cart/cart.actions'
@@ -77,44 +78,110 @@ export default function Product(plant){
     const configAddToCartButton = {
         type: 'button'
     }
+
+    const openNotification = () => {
+        notification.open({
+          style: {
+            color: '#1DA57A',
+            fontWeight: 'bold',
+            opacity: 0.9,
+            cursor: 'pointer',
+          },
+          placement: 'bottomRight',
+          message: 'Item Added',
+          description: `${plantName} is added to your cart.`,
+          duration: 4,
+        })
+    }
  
     const handleAddToCart = (plant) => {
         if(!plant) return 
         dispatch(addPlantToCart(plant))
+        openNotification()
     }
 
     return(
-        <StyledDiv>
-            <div className="thumb">
-                <Link to={`/plant/${documentId}`}>
-                    <img src={plantThumbnail} alt={plantName}/>
-                </Link>
-            </div>
+        // <StyledDiv>
+        //     <div className="thumb">
+        //         <Link to={`/plant/${documentId}`}>
+        //             <img src={plantThumbnail} alt={plantName}/>
+        //         </Link>
+        //     </div>
 
-            <div className="details">
-                <ul>
-                    <li>
-                        <Link to={`/plant/${documentId}`}>
-                            <span className="name">
-                                {plantName}
-                            </span>
-                        </Link>
-                    </li>
-                    <li>
-                        $<span className="price">
-                            {plantPrice}
-                        </span>
-                    </li>
-                    <li>
-                        <div className="add_to_cart">
-                            <Button {...configAddToCartButton} onClick={() => handleAddToCart(plant)}>
-                                Add to cart
-                            </Button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </StyledDiv>
+        //     <div className="details">
+        //         <ul>
+        //             <li>
+        //                 <Link to={`/plant/${documentId}`}>
+        //                     <span className="name">
+        //                         {plantName}
+        //                     </span>
+        //                 </Link>
+        //             </li>
+        //             <li>
+        //                 $<span className="price">
+        //                     {plantPrice}
+        //                 </span>
+        //             </li>
+        //             <li>
+        //                 <div className="add_to_cart">
+        //                     <Button {...configAddToCartButton} onClick={() => handleAddToCart(plant)}>
+        //                         Add to cart
+        //                     </Button>
+        //                 </div>
+        //             </li>
+        //         </ul>
+        //     </div>
+        // </StyledDiv>
+
+    <Col key={documentId} md={8}>
+        
+            <Card
+            hoverable
+            style={{ padding: 10, margin: 10 }}
+            cover={
+            
+                <img
+                    height='320px'
+                    width='280px'
+                    alt={plantName}
+                    src={plantThumbnail}
+                    style={{ maxHeight: '400px'}}
+                />
+            
+              }
+            >
+            <Card.Meta
+                title={<h2>{plantName}</h2>}
+                //   description={props.itemDescription}
+                />
+                <br></br>
+            <Divider orientation='center'>Price</Divider>
+                <p
+                style={{
+                    lineHeight: '28px',
+                    fontWeight: 'lighter',
+                    fontSize: '46px',
+                    color: '#2ecc71',
+                    textAlign: 'center',
+                }}
+                >
+                {plantPrice}
+                </p>
+            <Row gutter={[10]} className='add-cart-btn-row'>
+            <Col>
+                <Button
+                title='Add item to cart'
+                onClick={() =>
+                    handleAddToCart(plant)
+                }
+                type='primary'
+                >
+                Add to cart
+                </Button>
+            </Col>
+            </Row>
+        </Card>
+    </Col>
 
     )
 }

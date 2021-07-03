@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { removeCartItem, addPlantToCart , reduceCartItem } from './../../../redux/cart/cart.actions'
 
-const Item = (plant) => {
+export default function Item(plant){
   const dispatch = useDispatch()
   const {
     documentId,
@@ -68,5 +68,3 @@ const Item = (plant) => {
     </table>
   )
 }
-
-export default Item
