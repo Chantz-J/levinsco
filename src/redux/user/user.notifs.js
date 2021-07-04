@@ -12,7 +12,7 @@ export const emailSignInNotification = (user) => {
         },
         placement: 'topRight',
         message: 'Signed In!',
-        description: ` Welcome, ${user.displayName}!`,
+        description: ` Welcome back!`,
         duration: 7,
     })
 }
@@ -42,8 +42,8 @@ export const googleSignOutNotification = () => {
           cursor: 'pointer',
         },
         placement: 'topRight',
-        message: 'Signed Out',
-        description: `You have signed out.`,
+        message: 'Signed Out!',
+        description: `You have signed out!`,
         duration: 7,
     })
 }

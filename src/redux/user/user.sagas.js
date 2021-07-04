@@ -106,7 +106,7 @@ export function* onCheckUserSession(){
             //Write to the database with the user object, and also passing display name...
             // yield call (handleUserProfile, { userAuth: user, additionalData: { displayName} } )
             const additionalData = { displayName }
-            yield getSnapshotFromUserAuth(user, additionalData)
+            yield getSnapshotFromUserAuth(user, additionalData )
         } catch (error) {
             yield put(
                 registerServerError(error.message)

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Directory from '../../components/Directory'
 import Hero from '../../components/Sections/Hero'
 import About from '../../components/Sections/About'
-import NewHero from '../../components/Sections/NewHer'
 
 const StyledSection = styled.section`
     height: calc(100% - 6.5rem);
@@ -14,7 +13,8 @@ export default function Homepage(){
         <StyledSection>
             
             
+            {/* <Hero /> */}
             <Directory />
         </StyledSection>
     )
-}
+}   

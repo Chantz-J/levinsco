@@ -18,6 +18,8 @@ const StyledDiv =  styled.div`
         display: flex;
         flex-wrap: wrap;
         margin: 3rem -10px 0;
+        max-width: 1400px;
+    margin: 0 auto;
     }
 
     

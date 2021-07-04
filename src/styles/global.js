@@ -73,7 +73,7 @@ export const Global = createGlobalStyle`
     .main {
         width: 100%;
         height: calc(100% - 6.5rem);
-        max-width: 1450px;
+        max-width: 100%;
         padding: 0 10px;
         margin 0 auto;
     }
@@ -107,4 +107,16 @@ export const Global = createGlobalStyle`
       .dashboardLayout {
         height: calc(100% - 6.5rem - 5.8rem);
       } 
+
+
+      .heroBlock {
+        background: url('assets/images/bg-hero.jpg') no-repeat;
+        background-position: 50% 100%;
+        background-size: cover;
+        height: 100vh;
+      }
+      
+      .heroBlock .container-fluid {
+        display: block !important;
+      }
 `
