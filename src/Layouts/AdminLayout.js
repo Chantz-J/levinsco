@@ -5,6 +5,7 @@ import { signOutUserStart } from './../redux/user/user.actions'
 import { Global } from '../styles/global'
 
 import Header from './../components/Header'
+import Navbar from './../components/Navbar'
 import VerticalNav from './../components/VerticalNav'
 import Footer from './../components/Footer'
 
@@ -18,7 +19,8 @@ export default function AdminLayout(props){
   return (
     <div className="adminLayout">
       <Global/>
-      <Header {...props} />
+      {/* <Header {...props} /> */}
+      <Navbar {...props} />
       <div className="controlPanel">
         <div className="sidebar">
           <VerticalNav>
@@ -40,7 +42,7 @@ export default function AdminLayout(props){
           {props.children}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
