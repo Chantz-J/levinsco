@@ -42,7 +42,7 @@ export default function App(){
     return (
         <ThemeModeProvider>
           <Global />
-          <div className="App">
+          <div className="App" style={{background: 'white'}}>
             <AdminToolBar />
             <Switch>
 
