@@ -13,8 +13,8 @@ export default function Homepage(){
         <StyledSection>
             
             
-            {/* <Hero /> */}
-            <Directory />
+            <Hero />
+            {/* <Directory /> */}
         </StyledSection>
     )
 }   

@@ -5,11 +5,13 @@ import NavItem from './NavItem'
 import { NavbarContainer, 
         LinksWrapper, 
         ActionsWrapper,
-        InnerWrapper  } from './Navbar.stc'
+        InnerWrapper,
+        LogoWrapper  } from './Navbar.stc'
 
 import { noUserNavlinks, userNavlinks} from './Navlinks'
 import { Badge } from 'antd'
 import { UserOutlined, InboxOutlined } from '@ant-design/icons'
+import Leaves from '.././../assets/leaf.png'
 
 // ACTIONS
 import { signOutUserStart } from '../../redux/user/user.actions'
@@ -37,13 +39,19 @@ export default function Navbar(){
     return (
         <NavbarContainer>
             <ActionsWrapper>
+                <Link to='/'>
+                    <LogoWrapper>
+                        <img src={Leaves} alt='logo'/> 
+                        <span>Alafia.</span>
+                    </LogoWrapper>
+                </Link>
                 <Link to="/cart">
                     <Badge count={totalNumCartItems}>
-                        <InboxOutlined  style={{ fontSize: '4rem', color: '#000' }} />
+                        <InboxOutlined  style={{ fontSize: '3.1rem', color: '#000' }} />
                     </Badge>
                 </Link>
                 <Link to='/dashboard' style={{ marginLeft: '2rem'}}>
-                    <UserOutlined style={{ fontSize: '3.2rem', color: '#000' }} />
+                    <UserOutlined style={{ fontSize: '2.7rem', color: '#000' }} />
                 </Link>
             </ActionsWrapper>
             <LinksWrapper>

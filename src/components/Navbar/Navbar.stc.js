@@ -28,4 +28,19 @@ export const ActionsWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content center;
+
+`
+export const LogoWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    font-family: "Poppins", sans-serif;
+    color: #3ff1aa;
+    font-weight: 600;
+    font-size: 2.2rem;
+
+    img {
+        height: 50px;
+    }
+
 `

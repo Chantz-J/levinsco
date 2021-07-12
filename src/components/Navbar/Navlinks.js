@@ -9,10 +9,10 @@
             }
     ]
     },
-    {
-        text: 'Home',
-        href: '/',
-    },
+    // {
+    //     text: 'Home',
+    //     href: '/',
+    // },
     {
         text: 'Sign In',
         href: '/login',
@@ -40,10 +40,10 @@ const userNavlinks = [
             }
     ]
     },
-    {
-        text: 'Home',
-        href: '/',
-    },
+    // {
+    //     text: 'Home',
+    //     href: '/',
+    // },
     // {
     //     text: 'Profile',
     //     href: '/dashboard',
