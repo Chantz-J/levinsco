@@ -1,0 +1,17 @@
+[debug] [2021-07-12T15:24:11.054Z] ----------------------------------------------------------------------
+[debug] [2021-07-12T15:24:11.058Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\thegu\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-07-12T15:24:11.059Z] CLI Version:   9.16.0
+[debug] [2021-07-12T15:24:11.059Z] Platform:      win32
+[debug] [2021-07-12T15:24:11.059Z] Node Version:  v14.15.4
+[debug] [2021-07-12T15:24:11.137Z] Time:          Mon Jul 12 2021 11:24:11 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-07-12T15:24:11.138Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-12T15:24:11.327Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-12T15:24:11.328Z] > authorizing via signed-in user (johnson.chantz@gmail.com)
+[debug] [2021-07-12T15:24:11.328Z] [iam] checking project levinsco-4cba0 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2021-07-12T15:24:11.331Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/levinsco-4cba0:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2021-07-12T15:24:11.609Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 12 Jul 2021 15:24:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=94","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-12T15:24:11.612Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/levinsco-4cba0/serviceAccounts/levinsco-4cba0@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-07-12T15:24:11.831Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 12 Jul 2021 15:24:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
